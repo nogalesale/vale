@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Preinscripción - Colegio Marcelino Champagnat</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header class="header">
+    <div class="menu">
+      <a href="/" class="logo">Sistema de inscripción</a>
+    </div>
+  </header>
+
+  <main class="form-container">
+    <h1>Formulario de Preinscripción</h1>
+
+    <form id="preinscripcionForm" class="styled-form">
+      <div class="form-row">
+        <input type="text" name="nombres" placeholder="Nombres" required />
+        <input type="text" name="apellidos" placeholder="Apellidos" required />
+      </div>
+
+      <div class="form-row">
+        <input type="text" name="ci" placeholder="Cédula de identidad / Documento" required />
+        <input type="date" name="fecha_nac" required />
+      </div>
+
+      <div class="form-row">
+        <select name="genero" required>
+          <option value="">Género</option>
+          <option value="Femenino">Femenino</option>
+          <option value="Masculino">Masculino</option>
+          <option value="Otro">Otro / Prefiero no decir</option>
+        </select>
+
+        <select name="grado" required>
+          <option value="">Grado/Nivel</option>
+          <option value="Inicial">Inicial</option>
+          <option value="Primero">Primero</option>
+          <option value="Segundo">Segundo</option>
+          <option value="Tercero">Tercero</option>
+          <option value="Cuarto">Cuarto</option>
+          <option value="Quinto">Quinto</option>
+          <option value="Sexto">Sexto</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <input type="text" name="direccion" placeholder="Dirección" />
+        <input type="tel" name="telefono" placeholder="Teléfono" />
+      </div>
+
+      <div class="form-row">
+        <input type="email" name="email" placeholder="Correo electrónico" />
+        <input type="text" name="procedencia" placeholder="Colegio / Procedencia" />
+      </div>
+
+      <div class="form-row">
+        <input type="text" name="t_nombre" placeholder="Nombre del tutor" />
+        <input type="tel" name="t_cel" placeholder="Teléfono del tutor" />
+      </div>
+
+      <div class="form-row">
+        <input type="text" name="t_parentezco" placeholder="Parentesco" />
+        <input type="email" name="t_email" placeholder="Correo del tutor" />
+      </div>
+
+      <div class="form-row">
+        <input type="text" name="emergencia" placeholder="Contacto de emergencia" />
+      </div>
+
+      <button type="submit" class="header-button">Enviar preinscripción</button>
+    </form>
+
+    <p id="mensaje"></p>
+  </main>
+
+  <footer class="footer container">
+    <h3>U.E Marcelino Champagnat</h3>
+    <p>Una página hecha por estudiantes de la promo &copy; 2025</p>
+  </footer>
+
+  <script>
+    document.getElementById("preinscripcionForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const form = e.target;
+      const datos = Object.fromEntries(new FormData(form).entries());
+
+      try {
+        const res = await fetch("/api/preinscripcion", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(datos),
+        });
+
+        const data = await res.json();
+
+        if (res.ok) {
+          document.getElementById("mensaje").textContent = "✅ " + data.message;
+          document.getElementById("mensaje").style.color = "green";
+          form.reset();
+        } else {
+          document.getElementById("mensaje").textContent = "⚠️ Error: " + data.message;
+          document.getElementById("mensaje").style.color = "red";
+        }
+      } catch (err) {
+        console.error(err);
+        document.getElementById("mensaje").textContent = "❌ No se pudo conectar con el servidor.";
+        document.getElementById("mensaje").style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>

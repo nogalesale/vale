@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Colegio Marcelino Champagnat - Docentes de Secundaria</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <section class="section container" id="docentes">
+    <h2>Con los mejores docentes de Secundaria</h2>
+
+    <div class="teacher-grid">
+      <div class="teacher">
+        <img src="/img/profe1.jpg" alt="Profesor 1">
+        <h3>Lic. Bismarck Saavedra Delgadillo</h3>
+        <p><strong>Área:</strong> Matemáticas</p>
+        <p><strong>Formación:</strong> Lic. en Educación Matemática - UMSA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/profe2.jpeg" alt="Docente de Lenguaje">
+        <h3>Lic. Jimmy Verdún Guereca</h3>
+        <p><strong>Área:</strong> Lenguaje y Comunicación</p>
+        <p><strong>Formación:</strong> Lic. en Lingüística y Literatura - UCB</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/profe3.jpeg" alt="Docente de Inglés">
+        <h3>Lic. Ines Coya Núñez</h3>
+        <p><strong>Área:</strong> Religión</p>
+        <p><strong>Formación:</strong> Lic. en Lenguas Modernas - UCB</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/profe4.jpeg" alt="Docente de Física">
+        <h3>Prof. Laura Méndez</h3>
+        <p><strong>Área:</strong> Física</p>
+        <p><strong>Formación:</strong> Lic. en Física Aplicada - UMSS</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/quimica.jpg" alt="Docente de Química">
+        <h3>Prof. Rodrigo Vargas</h3>
+        <p><strong>Área:</strong> Química</p>
+        <p><strong>Formación:</strong> Lic. en Química Pura - UMSA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/biologia.jpg" alt="Docente de Biología">
+        <h3>Prof. Carolina Suárez</h3>
+        <p><strong>Área:</strong> Biología</p>
+        <p><strong>Formación:</strong> Lic. en Biología - Universidad de San Simón</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/geografia.jpg" alt="Docente de Geografía">
+        <h3>Prof. Jorge Ramírez</h3>
+        <p><strong>Área:</strong> Geografía</p>
+        <p><strong>Formación:</strong> Lic. en Ciencias Sociales - UPEA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/historia.jpg" alt="Docente de Historia">
+        <h3>Prof. Laura Gutiérrez</h3>
+        <p><strong>Área:</strong> Religión</p>
+        <p><strong>Formación:</strong> Lic. en Historia - UMSA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/civica.jpg" alt="Docente de Educación Cívica">
+        <h3>Prof. Marco Aguilar</h3>
+        <p><strong>Área:</strong> Educación Cívica</p>
+        <p><strong>Formación:</strong> Lic. en Derecho - UCB</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/religion.jpg" alt="Docente de Religión">
+        <h3>Prof. Silvia Torres</h3>
+        <p><strong>Área:</strong> Educación Religiosa</p>
+        <p><strong>Formación:</strong> Lic. en Ciencias Religiosas - Católica Boliviana</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/arte.jpg" alt="Docente de Arte">
+        <h3>Prof. Pablo Herrera</h3>
+        <p><strong>Área:</strong> Educación Artística</p>
+        <p><strong>Formación:</strong> Lic. en Artes Plásticas - UMSA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/musica.jpg" alt="Docente de Música">
+        <h3>Prof. Daniela Ruiz</h3>
+        <p><strong>Área:</strong> Música</p>
+        <p><strong>Formación:</strong> Lic. en Educación Musical - Conservatorio Nacional</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/tecnologia.jpg" alt="Docente de Tecnología">
+        <h3>Prof. Luis Mendoza</h3>
+        <p><strong>Área:</strong> Tecnología</p>
+        <p><strong>Formación:</strong> Ing. en Sistemas - UMSA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/educacionfisica.jpg" alt="Docente de Educación Física">
+        <h3>Prof. Jorge López</h3>
+        <p><strong>Área:</strong> Educación Física</p>
+        <p><strong>Formación:</strong> Lic. en Educación Física y Deportes - UMSS</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/orientacion.jpg" alt="Docente de Orientación">
+        <h3>Prof. Andrea Paredes</h3>
+        <p><strong>Área:</strong> Orientación y Tutoría</p>
+        <p><strong>Formación:</strong> Psicóloga Educativa - UPEA</p>
+      </div>
+
+      <div class="teacher">
+        <img src="/img/informatica.jpg" alt="Docente de Informática">
+        <h3>Prof. Diego Salazar</h3>
+        <p><strong>Área:</strong> Informática</p>
+        <p><strong>Formación:</strong> Ing. en Informática - UCB</p>
+      </div>
+    </div>
+
+    <a href="/" class="btn volver">Volver a inicio</a>
+  </section>
+
+  <script>
+    document.querySelectorAll('.teacher').forEach(card => {
+      card.addEventListener('mouseenter', () => card.classList.add('hover'));
+      card.addEventListener('mouseleave', () => card.classList.remove('hover'));
+    });
+  </script>
+</body>
+</html>
